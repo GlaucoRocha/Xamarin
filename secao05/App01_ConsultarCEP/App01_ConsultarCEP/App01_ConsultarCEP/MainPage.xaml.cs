@@ -23,8 +23,31 @@ namespace App01_ConsultarCEP
 
             var xCep = CEP.Text.Trim();
             //todo - Validações
-            var xEnd = ViaCepServico.BuscarEnderecoViaCEP(xCep);
-            RESULTADO.Text = $"Endereço: {xEnd.Logradouro} - {xEnd.Bairro} - {xEnd.Localidade}, {xEnd.UF}";
+
+            if (CEPEhVAlido(xCep))
+            {
+                var xEnd = ViaCepServico.BuscarEnderecoViaCEP(xCep);
+                RESULTADO.Text = $"Endereço: {xEnd.Logradouro} - {xEnd.Bairro} - {xEnd.Localidade}, {xEnd.UF}";
+            }
+            
+        }
+
+        private bool CEPEhVAlido(string pCEP)
+        {
+            var xValido = true;
+            if (pCEP.Length != 8)
+            {
+                DisplayAlert("Erro", "CEP inválido! O CEP deve conter 8 caracteres", "OK");
+                xValido = false;
+            }
+            int xNovoCep = 0;
+            if (!int.TryParse(pCEP, out xNovoCep))
+            {
+                DisplayAlert("Erro", "CEP inválido! O CEP deve ser composto apenas por números", "OK");
+                xValido = false;
+            }
+
+            return xValido;
         }
     }
 }
