@@ -6,14 +6,14 @@ namespace App01_ConsultarCEP.servico.modelo
 {
     public class Endereco
     {
-        public string cep { get; set; }
-        public string logradouro { get; set; }
-        public string complemento { get; set; }
-        public string bairro { get; set; }
-        public string localidade { get; set; }
-        public string uf { get; set; }
-        public string unidade { get; set; }
-        public string ibge { get; set; }
-        public string gia { get; set; }
+        public string Cep { get; set; }
+        public string Logradouro { get; set; }
+        public string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string Localidade { get; set; }
+        public string UF { get; set; }
+        public string Unidade { get; set; }
+        public string IBGE { get; set; }
+        public string Gia { get; set; }
     }
 }

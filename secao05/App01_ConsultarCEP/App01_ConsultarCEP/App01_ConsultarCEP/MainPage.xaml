@@ -6,10 +6,10 @@
 
     <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
         <!-- Place new controls here -->
-        <Image Source="logo.png"></Image>
-        <Entry Placeholder="Digite o CEP" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF"></Entry>
-        <Button Text="Digite o cep" TextColor="#FFFFFF" BackgroundColor="#00416B"> </Button>
-        <Label Text="" 
+        <Image Source="logo.png" x:Name="LOGO"></Image>
+        <Entry Placeholder="Digite o CEP" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF" x:Name="CEP"></Entry>
+        <Button Text="Digite o cep" TextColor="#FFFFFF" BackgroundColor="#00416B" x:Name="BOTAO"> </Button>
+        <Label Text="" x:Name="RESULTADO"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     </StackLayout>

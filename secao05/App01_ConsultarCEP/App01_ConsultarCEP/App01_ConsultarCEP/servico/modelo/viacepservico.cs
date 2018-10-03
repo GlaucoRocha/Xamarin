@@ -7,7 +7,7 @@ using  Newtonsoft.Json;
 
 namespace App01_ConsultarCEP.servico.modelo
 {
-    public class viacepservico
+    public class ViaCepServico
     {
         private static string _enderecoURL = "http://viacep.com.br/ws/{0}/json";
 
