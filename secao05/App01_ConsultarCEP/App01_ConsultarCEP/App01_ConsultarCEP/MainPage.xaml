@@ -4,11 +4,11 @@
              xmlns:local="clr-namespace:App01_ConsultarCEP"
              x:Class="App01_ConsultarCEP.MainPage">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFBF00">
         <!-- Place new controls here -->
-        <Image></Image>
-        <Entry></Entry>
-        <Button></Button>
+        <Image Source="logo.png"></Image>
+        <Entry Placeholder="Digite o CEP" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF"></Entry>
+        <Button Text="Digite o cep" TextColor="#FFFFFF" BackgroundColor="#00416B"> </Button>
         <Label Text="" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
