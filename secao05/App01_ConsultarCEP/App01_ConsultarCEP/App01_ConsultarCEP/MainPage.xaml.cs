@@ -26,8 +26,20 @@ namespace App01_ConsultarCEP
 
             if (CEPEhVAlido(xCep))
             {
-                var xEnd = ViaCepServico.BuscarEnderecoViaCEP(xCep);
-                RESULTADO.Text = $"Endereço: {xEnd.Logradouro} - {xEnd.Bairro} - {xEnd.Localidade}, {xEnd.UF}";
+                try
+                {
+                    var xEnd = ViaCepServico.BuscarEnderecoViaCEP(xCep);
+                    if (xEnd != null)
+                        RESULTADO.Text = $"Endereço: {xEnd.Logradouro} - {xEnd.Bairro} - {xEnd.Localidade}, {xEnd.UF}";
+                    else
+                        DisplayAlert("ERRO", $"O CEP não foi encontrado para o cep informado: {xCep} ", "OK")
+                    
+                }
+                catch (Exception e)
+                {
+                    DisplayAlert("ERRO CRÍTICO", e.Message, "OK");
+                }
+                
             }
             
         }

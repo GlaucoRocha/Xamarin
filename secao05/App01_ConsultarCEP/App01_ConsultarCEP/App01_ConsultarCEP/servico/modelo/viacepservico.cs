@@ -18,7 +18,11 @@ namespace App01_ConsultarCEP.servico.modelo
             var xWc = new WebClient();
             var xConteudo = xWc.DownloadString(xNovoEnderecoURL);
 
-            return JsonConvert.DeserializeObject<Endereco>(xConteudo);
+            var xEnd = JsonConvert.DeserializeObject<Endereco>(xConteudo);
+
+            if (xEnd.Cep == null)
+                return null;
+            return xEnd;
 
         }
     }
